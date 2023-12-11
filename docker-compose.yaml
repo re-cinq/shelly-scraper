@@ -1,0 +1,23 @@
+version: "3.9"
+ 
+########################### NETWORKS
+networks:
+  default:
+    driver: bridge
+ 
+########################### SERVICES
+services:
+  # InfluxDB - Database for sensor data
+  influxdb:
+    image: influxdb:latest
+    container_name: influxdb
+    networks:
+      - default
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+    ports:
+      - "8086:8086"
+    volumes:
+      - ./.appdata/influxdb2/config:/etc/influxdb2
+      - ./.appdata/influxdb2/db:/var/lib/influxdb2

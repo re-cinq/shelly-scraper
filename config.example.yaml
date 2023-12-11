@@ -1,0 +1,4 @@
+plugs:
+# Fill in the following list of devices
+- addr: # IP address
+  name: # give your plug a name

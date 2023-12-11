@@ -3,7 +3,7 @@ package shelly
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 )
 
@@ -48,7 +48,7 @@ func (c *Client) GetSwitchStatus(id string) (*SwitchStatusResponse, error) {
 		return nil, fmt.Errorf("client: failed getting response: %s\n", err)
 	}
 
-	body, err := ioutil.ReadAll(res.Body)
+	body, err := io.ReadAll(res.Body)
 	if err != nil {
 		return nil, fmt.Errorf("client: could not read response body: %s\n", err)
 	}
