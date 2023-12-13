@@ -24,6 +24,8 @@ You will need to set the following environment variables:
 INFLUXDB_ORG=
 INFLUXDB_BUCKET=
 INFLUXDB_TOKEN=
+# Electricty Maps token 
+MAPS_TOKEN=
 ```
 
 ### Set Up Shelly plugs
@@ -51,3 +53,6 @@ For now you can just run it with:
 ```bash
 go run cmd/scraper/scraper.go
 ```
+
+
+
